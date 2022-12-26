@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="./icons.css" />
+        <style>
+            html, body {
+                padding: 0;
+                margin: 0;
+                border: 0;
+            }
+            body {
+                font-size: 4em;
+            }
+
+            #big-icon {
+                display: block;
+                font-size: 3em;
+                margin: auto;
+                margin-top: 2em;
+            }
+        </style>
+        <script>
+            const setupIcons = ()=>{
+                const bigIcon = document.querySelector("#big-icon.icon")
+                let currentIcon = ""
+
+                document.querySelectorAll(".icon:not(#big-icon)").forEach(iconEle=>{
+                    const classes = iconEle.classList
+
+                    iconEle.addEventListener("click", function(ev){
+                        bigIcon.classList
+                            .forEach(entry=>bigIcon.classList.remove(entry))
+                        classes.forEach(entry=>{
+                            bigIcon.classList.add(entry)
+                            bigIcon.classList.add("animated")
+                        })
+                    })
+                })
+            }
+
+            window.addEventListener("load", setupIcons)
+        </script>
+    </head>
+    <body>
+        <span class="icon chevron-left"></span>
+        <span class="icon chevron-right"></span>
+        <span class="icon chevron-up"></span>
+        <span class="icon chevron-down"></span>
+
+        <div id="big-icon" class="animated icon"></div>
+        
+    </body>
+</html>

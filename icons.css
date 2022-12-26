@@ -1,0 +1,55 @@
+.debug, .debug::before, .debug::after {
+    background-color: rgba(80, 108, 222, 0.4)
+}
+
+.icon {
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    box-sizing: border-box;
+
+    --clear: rgba(rgba(0,0,0,0));
+    --stroke: 0.2em
+}
+
+.icon::before, .icon::after {
+    content: " ";
+    display: block;
+    box-sizing: border-box;
+}
+
+.icon.animated, .icon.animated::before, .icon.animated::after {
+    transition: all 0.25s;
+    transition-timing-function: ease-in-out;
+}
+
+.icon.chevron-left::before,
+.icon.chevron-right::before,
+.icon.chevron-up::before,
+.icon.chevron-down::before {
+    width: 0.7em;
+    height: 0.7em;
+    border: solid currentcolor var(--stroke);
+}
+
+.icon.chevron-up::before{
+    transform: translate(0.15em, 0.30em) rotate(45deg);
+    border-bottom: solid rgba(0,0,0,0) 0;
+    border-right: solid rgba(0,0,0,0) 0;
+}
+.icon.chevron-right::before {
+    transform: translate(0.30em, 0.15em) rotate(45deg);
+    
+    border-top: solid rgba(0,0,0,0) 0;
+    border-right: solid rgba(0,0,0,0) 0;
+}
+.icon.chevron-left::before {
+    transform: translate(-0.05em, 0.15em) rotate(45deg);
+    border-left: solid rgba(0,0,0,0) 0;
+    border-bottom: solid rgba(0,0,0,0) 0;
+}
+.icon.chevron-down::before {
+    transform: translate(0.15em, -0.05em) rotate(45deg);
+    border-left: solid rgba(0,0,0,0) 0;
+    border-top: solid rgba(0,0,0,0) 0;
+}
