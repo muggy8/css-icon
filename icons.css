@@ -16,6 +16,11 @@
     content: " ";
     display: block;
     box-sizing: border-box;
+    width: 100%;
+    height: 0;
+    border: solid rgba(0,0,0,0) 0;
+    -webkit-box-shadow: 0 0 0 0 currentColor; 
+    box-shadow: 0 0 0 0 currentColor; 
 }
 
 .icon.animated, .icon.animated::before, .icon.animated::after {
@@ -52,4 +57,43 @@
     transform: translate(0.15em, -0.05em) rotate(45deg);
     border-left: solid rgba(0,0,0,0) 0;
     border-top: solid rgba(0,0,0,0) 0;
+}
+
+.icon.menu::before {
+    width: 100%;
+    height: var(--stroke);
+    background-color: currentColor;
+
+    -webkit-box-shadow: 
+        0px calc(1em - var(--stroke)) 0px 0px currentColor,
+        0px calc(0.5em - calc( var(--stroke)/2 ) ) 0px 0px currentColor
+    ; 
+    box-shadow: 
+        0px calc(1em - var(--stroke)) 0px 0px currentColor,
+        0px calc(0.5em - calc( var(--stroke)/2 ) ) 0px 0px currentColor
+    ;
+}
+
+.icon.minus::before, 
+.icon.plus::before, 
+.icon.plus::after,
+.icon.multiply::before, 
+.icon.multiply::after {
+    width: 100%;
+    height: var(--stroke);
+    background-color: currentColor;
+    transform: translateY(
+        calc(0.5em - calc( var(--stroke)/2 ))
+    );
+}
+.icon.plus::after, .icon.multiply::after  {
+    transform: 
+    translateY(
+        calc(0.5em - calc( var(--stroke)/2 ) - var(--stroke))
+    )
+    rotate(90deg);
+}
+
+.icon.multiply {
+    transform: rotate(45deg);
 }
