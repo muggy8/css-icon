@@ -88,12 +88,25 @@
 }
 .icon.plus::after, .icon.multiply::after  {
     transform: 
-    translateY(
-        calc(0.5em - calc( var(--stroke)/2 ) - var(--stroke))
-    )
-    rotate(90deg);
+        translateY(
+            calc(0.5em - calc( var(--stroke)/2 ) - var(--stroke))
+        )
+        rotate(90deg);
+}
+
+/* rotate things differently for cooler looking animation */
+.icon.plus::before {
+    transform: 
+        translateY(
+            calc(0.5em - calc( var(--stroke)/2 ))
+        )
+        rotate(-180deg);;
 }
 
 .icon.multiply {
     transform: rotate(45deg);
+}
+
+.icon.home::before {
+
 }
