@@ -136,3 +136,15 @@
         transform: rotateZ(360deg)
     }
 }
+
+.icon.checkbox {
+    border: solid var(--stroke) currentColor;
+}
+
+.icon.checkbox.checked::before {
+    border-bottom: solid var(--stroke) currentColor;
+    border-left: solid var(--stroke) currentColor;
+    transform: translate(0,0.05em) rotate(-45deg);
+    width: 0.6em;
+    height: 0.4em;
+}
