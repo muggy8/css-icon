@@ -174,13 +174,15 @@
 
 .icon.eye::after, 
 .icon.no-eye::after {
-    content: "o";
-    font-family: monospace;
+    width: 0.5em;
+    height: 0.5em;
+    border-radius: 0.25em;
+    border: solid calc(var(--stroke) * 0.66) currentColor;
     transform: 
-        translate(0, -0.7em)
+        translate(0.2em, -0.5em)
         rotate(-45deg)
-        translate(-0.325em, -0.35em);
-    font-weight: 900;
+        translate(0, 0.05em)
+    ;
 }
 
 .icon.no-eye {
