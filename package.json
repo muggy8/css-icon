@@ -1,0 +1,26 @@
+{
+  "name": "css-icons",
+  "version": "0.0.0",
+  "description": "a stupid set of CSS icons that doesn't use position:absolute",
+  "main": "icons.css",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/muggy8/css-icons.git"
+  },
+  "keywords": [
+    "css",
+    "icons"
+  ],
+  "author": "Muggy *",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/muggy8/css-icons/issues"
+  },
+  "homepage": "https://github.com/muggy8/css-icons#readme",
+  "dependencies": {
+    "csso": "^5.0.5"
+  }
+}
