@@ -185,13 +185,64 @@
 
 .icon.hide {
     background: 
-    linear-gradient(
-        90deg, 
-        var(--clear) 0, 
-        var(--clear) calc(0.5em - calc(var(--stroke) / 2)), 
-        currentcolor calc(0.5em - calc(var(--stroke) / 2)), 
-        currentcolor calc(0.5em + calc(var(--stroke) / 2)), 
-        var(--clear) calc(0.5em + calc(var(--stroke) / 2)), 
-        var(--clear) 1em
-    ); 
+        linear-gradient(
+            90deg, 
+            var(--clear) 0, 
+            var(--clear) calc(0.5em - calc(var(--stroke) / 2)), 
+            currentcolor calc(0.5em - calc(var(--stroke) / 2)), 
+            currentcolor calc(0.5em + calc(var(--stroke) / 2)), 
+            var(--clear) calc(0.5em + calc(var(--stroke) / 2)), 
+            var(--clear) 1em
+        ); 
+}
+
+.icon.link {
+    --current-stroke: calc(var(--stroke) * 0.75);
+    --current-stroke-negative: calc(var(--current-stroke) * -1);
+    --shadow-spread: calc(var(--current-stroke) * -0.25);
+    --shadow-offset: calc(
+        calc(
+            var(--shadow-spread) * -1
+        ) 
+        + 
+        var(--current-stroke)
+    );
+    --shadow-offset-negative: calc( -1 * var(--shadow-offset));
+    transform: 
+        rotate(45deg)
+    ;
+}
+.icon.link::before, 
+.icon.link::after {
+    width: 0.2em;
+    height: 0.3em;
+    margin-left:0.4em;
+    box-shadow: 
+        /* the primary edges */
+        var(--shadow-offset-negative) var(--shadow-offset) 0 var(--shadow-spread) currentColor,
+        var(--shadow-offset-negative) var(--shadow-offset-negative) 0 var(--shadow-spread) currentColor,
+        var(--shadow-offset) var(--shadow-offset-negative) 0 var(--shadow-spread) currentColor,
+
+        /* fill in space for the primary edges because the box isn't big enough */
+        calc(var(--shadow-offset-negative) * 0.5) var(--shadow-offset-negative) 0 var(--shadow-spread) currentColor,
+        calc(var(--shadow-offset) * 0.5) var(--shadow-offset-negative) 0 var(--shadow-spread) currentColor,
+
+        calc(var(--shadow-offset-negative) * 0.5) var(--shadow-offset) 0 var(--shadow-spread) currentColor,
+
+        /* fill in the empty gaps where needed */
+        var(--shadow-offset-negative) 0 0 var(--shadow-spread) currentColor,
+        calc(var(--shadow-offset-negative) * 0.5) 0 0 var(--shadow-spread) currentColor,
+        0 var(--shadow-offset-negative) 0 var(--shadow-spread) currentColor
+
+    ;
+}
+
+.icon.link::before {
+    margin-top: 0.2em;
+}
+
+.icon.link::after {
+    transform: 
+        rotate(180deg)
+    ;
 }

@@ -8,10 +8,13 @@
                 border: 0;
                 padding-top: 1em;
             }
-
-            #big-icon {
+            
+            #big-icon-area {
+                width: 1em;
+                height: 1em;
                 display: block;
                 margin: auto;
+                background-color: gainsboro;
             }
 
             html {
@@ -30,11 +33,11 @@
                 padding-top: 4em;
             }
 
-            .icon-preview .icon {
+            .icon-preview > * {
                 font-size: 8em;
             }
 
-            .icon-list .icon {
+            .icon-list > * {
                 font-size: 4em;
             }
         </style>
@@ -80,9 +83,12 @@
                 <span class="icon checkbox checked"></span>
                 <span class="icon show"></span>
                 <span class="icon hide"></span>
+                <span class="icon link"></span>
             </div>
             <div class="icon-preview">
-                <div id="big-icon" class="animated icon"></div>
+                <div id="big-icon-area">
+                    <div id="big-icon" class="animated icon"></div>
+                </div>
             </div>
         </div>
         
