@@ -149,14 +149,14 @@
     height: 0.4em;
 }
 
-.icon.show,
-.icon.hide {
+.icon.eye,
+.icon.no-eye {
     transform: rotate(45deg);
     overflow: hidden;
 }
 
-.icon.show::before, 
-.icon.hide::before {
+.icon.eye::before, 
+.icon.no-eye::before {
     border: solid calc(var(--stroke) * 0.66) currentColor;
     border-top-left-radius: 0.6em;
     border-bottom-right-radius: 0.6em;
@@ -172,8 +172,8 @@
         );
 }
 
-.icon.show::after, 
-.icon.hide::after {
+.icon.eye::after, 
+.icon.no-eye::after {
     content: "o";
     font-family: monospace;
     transform: 
@@ -183,7 +183,7 @@
     font-weight: 900;
 }
 
-.icon.hide {
+.icon.no-eye {
     background: 
         linear-gradient(
             90deg, 
