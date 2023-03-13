@@ -4,7 +4,8 @@
   "description": "a stupid set of CSS icons that doesn't use position:absolute",
   "main": "icons.css",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "csso icons.css --output icons.min.css"
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,7 @@
   },
   "homepage": "https://github.com/muggy8/css-icons#readme",
   "dependencies": {
-    "csso": "^5.0.5"
+    "csso": "^5.0.5",
+    "csso-cli": "^4.0.2"
   }
 }
