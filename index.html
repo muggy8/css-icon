@@ -41,17 +41,20 @@
         <script>
             const setupIcons = ()=>{
                 const bigIcon = document.querySelector("#big-icon.icon")
-                let currentIcon = ""
 
                 document.querySelectorAll(".icon:not(#big-icon)").forEach(iconEle=>{
                     const classes = iconEle.classList
 
                     iconEle.addEventListener("click", function(ev){
-                        bigIcon.classList
-                            .forEach(entry=>bigIcon.classList.remove(entry))
+                        Array.prototype.map.call(bigIcon.classList, item=>item)
+                            .forEach(entry=>{
+                                console.log("removing", entry)
+                                bigIcon.classList.remove(entry)
+                            })
+                        bigIcon.classList.add("animated")
                         classes.forEach(entry=>{
+                            console.log("adding", entry)
                             bigIcon.classList.add(entry)
-                            bigIcon.classList.add("animated")
                         })
                     })
                 })
@@ -75,6 +78,8 @@
                 <span class="icon loading"></span>
                 <span class="icon checkbox"></span>
                 <span class="icon checkbox checked"></span>
+                <span class="icon show"></span>
+                <span class="icon hide"></span>
             </div>
             <div class="icon-preview">
                 <div id="big-icon" class="animated icon"></div>

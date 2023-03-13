@@ -148,3 +148,50 @@
     width: 0.6em;
     height: 0.4em;
 }
+
+.icon.show,
+.icon.hide {
+    transform: rotate(45deg);
+    overflow: hidden;
+}
+
+.icon.show::before, 
+.icon.hide::before {
+    border: solid calc(var(--stroke) * 0.66) currentColor;
+    border-top-left-radius: 0.6em;
+    border-bottom-right-radius: 0.6em;
+    width: 0.7em;
+    height: 0.7em;
+
+    transform: 
+        translate(0.15em,0.15em) 
+        matrix(
+            1.2, 0.2,
+            0.2, 1.2,
+            0, 0
+        );
+}
+
+.icon.show::after, 
+.icon.hide::after {
+    content: "o";
+    font-family: monospace;
+    transform: 
+        translate(0, -0.7em)
+        rotate(-45deg)
+        translate(-0.325em, -0.35em);
+    font-weight: 900;
+}
+
+.icon.hide {
+    background: 
+    linear-gradient(
+        90deg, 
+        var(--clear) 0, 
+        var(--clear) calc(0.5em - calc(var(--stroke) / 2)), 
+        currentcolor calc(0.5em - calc(var(--stroke) / 2)), 
+        currentcolor calc(0.5em + calc(var(--stroke) / 2)), 
+        var(--clear) calc(0.5em + calc(var(--stroke) / 2)), 
+        var(--clear) 1em
+    ); 
+}
